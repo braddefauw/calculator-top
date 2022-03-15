@@ -1,38 +1,27 @@
-const sum = function(arr) {
-    return arr.reduce((a, b) => {
-        return a + b;
-    }, 0);
-};
+const add = (num1, num2) => {
+    return num1 + num2
+}
 
-const diff = function(arr) {
-    return arr.reduce((a, b) => {
-        return -a - b;
-    }, 0);
-};
+const subtract = (num1, num2) => {
+    return num1 - num2
+}
 
-const mult = function(arr) {
-    return arr.reduce((a, b) => {
-        return a * b;
-    });
-};
-const divide = function(arr) {
-    return arr.reduce((a, b) => {
-        return a / b;
-    });
-};
+const multiply = (num1, num2) => {
+    return num1 * num2
+}
 
-const power = function(a, b) {
-	return a ** b;
-};
+const divide = (num1, num2) => {
+    return num1 / num2;
+}
 
-const factorial = function(num) {
-	result = num;
-  if(num === 0){
-    return 1;
-  }
-  while(num > 1){
-    num--;
-    result *= num;
-  }
-  return result;
-};
+const operate = (operator, num1, num2) => {
+    if(operator === "+"){
+        return add(num1, num2)
+    }else if(operator === "-"){
+        return subtract(num1, num2)
+    }else if(operator === "*"){
+        return multiply(num1, num2)
+    }else if(operator === "/"){
+        return divide(num1, num2)
+    }
+}
