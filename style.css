@@ -13,8 +13,7 @@ body {
 }
 
 .calc-container {
-    background-color: white;
-    width: 40%;
+    width: 400px;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -123,13 +122,72 @@ input:checked + .slider:before {
 }
 
 .output-row {
-    background-color: yellow;
     height: 30%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(222, 26%, 31%);
+}
+
+.output-number {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: hsl(223, 31%, 20%);
+    border-radius: 8px;
+}
+
+.output-number h1 {
+    color: white;
+    padding: 24px;
 }
 
 .calc-buttons {
-    background-color: orange;
+    background-color: hsl(223, 31%, 20%);
+    border-radius: 8px;
     height: 70%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    padding: 16px 0px 16px 0px;
+}
+
+.calc-buttons button {
+    margin: 8px;
+    border-radius: 8px;
+    border: 1px solid hsl(221, 14%, 31%);
+    font-size: 24px;
+}
+
+.calc-buttons .number {
+    width: 20%;
+    height: 15%;
+    background-color: hsl(30, 25%, 89%);
+    color: hsl(221, 14%, 31%);
+}
+
+.calc-buttons .delete {
+    width: 20%;
+    height: 15%;
+    background-color: hsl(225, 21%, 49%);
+    color: white;
+}
+
+.calc-buttons .reset {
+    width: 45%;
+    height: 15%;
+    background-color: hsl(225, 21%, 49%);
+    color: white;
+}
+
+.calc-buttons .equals {
+    width: 45%;
+    height: 15%;
+    background-color: hsl(6, 63%, 50%);
+    color: white;
 }
