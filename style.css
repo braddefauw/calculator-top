@@ -1,3 +1,34 @@
+html {
+    height: 100%;
+}
+
 body {
-    background-color: lavender;
+    min-height: 100%;
+    background-color: hsl(222, 26%, 31%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Spartan', sans-serif;
+}
+
+.calc-container {
+    background-color: white;
+    height: 60%;
+    width: 40%;
+    display: flex;
+}
+
+.calc-container:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.top-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    height: 20%;
+    width: 100%;
 }
