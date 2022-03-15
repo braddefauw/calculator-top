@@ -14,17 +14,14 @@ body {
 
 .calc-container {
     background-color: white;
-    width: 400px;
+    width: 40%;
     height: 500px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     border-radius: 15px;
-}
-
-.calc-container:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
 }
 
 .top-row {
@@ -32,8 +29,10 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 20%;
+    height: 10%;
     width: 100%;
+    background-color: hsl(222, 26%, 31%);
+    color: white;
 }
 
 .top-row h2{
@@ -83,7 +82,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: hsl(223, 31%, 20%);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -95,18 +94,18 @@ body {
     width: 13px;
     left: 2px;
     bottom: 2px;
-    background-color: white;
+    background-color: hsl(6, 63%, 50%);
     -webkit-transition: .4s;
     transition: .4s;
 }
 
-input:checked + .slider {
+/* input:checked + .slider {
     background-color: #2196F3;
 }
 
 input:focus + .slider {
     box-shadow: 0 0 1px #2196F3;
-}
+} */
 
 input:checked + .slider:before {
     -webkit-transform: translateX(42px);
@@ -121,4 +120,16 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.output-row {
+    background-color: yellow;
+    height: 30%;
+    width: 100%;
+}
+
+.calc-buttons {
+    background-color: orange;
+    height: 70%;
+    width: 100%;
 }
