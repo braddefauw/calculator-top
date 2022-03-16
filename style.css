@@ -162,7 +162,16 @@ input:checked + .slider:before {
     border-radius: 8px;
     border: 1px solid hsl(221, 14%, 31%);
     font-size: 24px;
+    
 }
+
+.calc-buttons button:hover {
+    background-color:hsl(6, 63%, 50%);
+}
+
+.calc-buttons .equals:hover {
+    background-color:hsl(221, 14%, 31%)
+} 
 
 .calc-buttons .number {
     width: 20%;
