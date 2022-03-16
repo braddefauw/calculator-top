@@ -26,7 +26,7 @@ const operate = (operator, num1, num2) => {
     }
 }
 
-function myFunction() {
+function changeText() {
     let outputText = document.getElementById("output-h1");
     let btnText = this.textContent || this.innerText;
     outputText.innerText = btnText;
