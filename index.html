@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator BD</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;400;700;800&display=swap" rel="stylesheet">
@@ -32,29 +31,30 @@
         </div>
         <div class="output-row">
             <div class="output-number">
-                <h1>Number</h1>
+                <h1 id="output-h1">Number</h1>
             </div>
         </div>
         <div class="calc-buttons">
-            <button class="number">7</button>
-            <button class="number">8</button>
-            <button class="number">9</button>
+            <button class="number" onclick="myFunction.bind(this)()">7</button>
+            <button class="number" onclick="myFunction.bind(this)()">8</button>
+            <button class="number" onclick="myFunction.bind(this)()">9</button>
             <button class="delete">DEL</button>
-            <button class="number">4</button>
-            <button class="number">5</button>
-            <button class="number">6</button>
+            <button class="number" onclick="myFunction.bind(this)()">4</button>
+            <button class="number" onclick="myFunction.bind(this)()">5</button>
+            <button class="number" onclick="myFunction.bind(this)()">6</button>
             <button class="number">+</button>
-            <button class="number">1</button>
-            <button class="number">2</button>
-            <button class="number">3</button>
+            <button class="number" onclick="myFunction.bind(this)()">1</button>
+            <button class="number" onclick="myFunction.bind(this)()">2</button>
+            <button class="number" onclick="myFunction.bind(this)()">3</button>
             <button class="number">-</button>
             <button class="number">.</button>
-            <button class="number">0</button>
+            <button class="number" onclick="myFunction.bind(this)()">0</button>
             <button class="number">/</button>
             <button class="number">x</button>
             <button class="reset">RESET</button>
             <button class="equals">=</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
