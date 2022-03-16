@@ -1,17 +1,18 @@
-let valueOne = "test";
-let valueTwo = "hello";
+let valueOne = "first number";
+let valueTwo = 7;
+let displayValue = document.getElementById("output-h1");
 
 function changeText() {
-    let displayValue = document.getElementById("output-h1");
     let btnText = this.textContent || this.innerText;
     displayValue.innerText += btnText;
-    valueOne = displayValue.innerText;
+    valueOne = parseInt(displayValue.innerText);
     return valueOne;
 }
 
-const add = (num1, num2) => {
+const add = (valueOne, valueTwo) => {
     console.log(valueOne);
-    return num1 + num2
+    console.log(valueTwo);
+    displayValue.innerText = valueOne + valueTwo;
 }
 
 const subtract = (num1, num2) => {
