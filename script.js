@@ -13,6 +13,7 @@ function changeText() {
 
 const add = (valueOne, valueTwo) => {
     operator = "+";
+    displayValue.innerText += " " + operator + " ";
     result = valueOne + valueTwo;
 }
 
@@ -31,7 +32,7 @@ const divide = (valueOne, valueTwo) => {
     result = valueOne / valueTwo;
 }
 
-const operate = (operator, valueOne, valueTwo) => {
+const operate = (operator) => {
     if(operator === "+"){
         displayValue.innerText = result;
     }else if(operator === "-"){
@@ -41,4 +42,8 @@ const operate = (operator, valueOne, valueTwo) => {
     }else if(operator === "/"){
         displayValue.innerText = result;
     }
+}
+
+const deleteInt = () => {
+    displayValue.innerText = displayValue.innerText.slice(0, -1);
 }
