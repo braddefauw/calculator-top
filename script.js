@@ -1,6 +1,8 @@
 let valueOne = "first number";
 let valueTwo = 7;
+let result = "";
 let displayValue = document.getElementById("output-h1");
+let operator = "";
 
 function changeText() {
     let btnText = this.textContent || this.innerText;
@@ -10,31 +12,33 @@ function changeText() {
 }
 
 const add = (valueOne, valueTwo) => {
-    console.log(valueOne);
-    console.log(valueTwo);
-    displayValue.innerText = valueOne + valueTwo;
+    operator = "+";
+    result = valueOne + valueTwo;
 }
 
-const subtract = (num1, num2) => {
-    return num1 - num2
+const subtract = (valueOne, valueTwo) => {
+    operator = "-";
+    result = valueOne - valueTwo;
 }
 
-const multiply = (num1, num2) => {
-    return num1 * num2
+const multiply = (valueOne, valueTwo) => {
+    operator = "*";
+    result = valueOne * valueTwo;
 }
 
-const divide = (num1, num2) => {
-    return num1 / num2;
+const divide = (valueOne, valueTwo) => {
+    operator = "/";
+    result = valueOne / valueTwo;
 }
 
-const operate = (operator, num1, num2) => {
+const operate = (operator, valueOne, valueTwo) => {
     if(operator === "+"){
-        return add(num1, num2)
+        displayValue.innerText = result;
     }else if(operator === "-"){
-        return subtract(num1, num2)
+        displayValue.innerText = result;
     }else if(operator === "*"){
-        return multiply(num1, num2)
+        displayValue.innerText = result;
     }else if(operator === "/"){
-        return divide(num1, num2)
+        displayValue.innerText = result;
     }
 }

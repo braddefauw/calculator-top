@@ -46,13 +46,13 @@
             <button class="number" onclick="changeText.bind(this)()">1</button>
             <button class="number" onclick="changeText.bind(this)()">2</button>
             <button class="number" onclick="changeText.bind(this)()">3</button>
-            <button class="number">-</button>
+            <button class="number" onclick="subtract(valueOne, valueTwo)">-</button>
             <button class="number">.</button>
             <button class="number" onclick="changeText.bind(this)()">0</button>
-            <button class="number">/</button>
-            <button class="number">x</button>
+            <button class="number" onclick="divide(valueOne, valueTwo)">/</button>
+            <button class="number" onclick="multiply(valueOne, valueTwo)">x</button>
             <button class="reset">RESET</button>
-            <button class="equals">=</button>
+            <button class="equals" onclick="operate(operator, valueOne, valueTwo)">=</button>
         </div>
     </div>
     <script src="script.js"></script>
