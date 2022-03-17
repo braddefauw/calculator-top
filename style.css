@@ -157,7 +157,7 @@ input:checked + .slider:before {
     padding: 16px 0px 16px 0px;
 }
 
-.calc-buttons button {
+.calc-buttons input {
     margin: 8px;
     border-radius: 8px;
     border: 1px solid hsl(221, 14%, 31%);

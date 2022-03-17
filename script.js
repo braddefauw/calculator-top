@@ -3,14 +3,25 @@ let valueTwo = 7;
 let result = "";
 let displayValue = document.getElementById("output-h1");
 let operator = "";
+let btnText = "";
 
-function changeText() {
-    let btnText = this.textContent || this.innerText;
-    displayValue.innerText += btnText;
-    valueOne = parseFloat(displayValue.innerText);
-    valueTwo = parseFloat(displayValue.innerText);
-    return valueOne, valueTwo;
+let numBtns = document.querySelectorAll(".number");
+for(const btn of numBtns){
+    btn.addEventListener('click', function (){
+        displayValue.innerText += this.value;
+        valueOne = parseFloat(displayValue.innerText);
+        valueTwo = parseFloat(displayValue.innerText);
+        console.log(valueOne, valueTwo)
+    })
 }
+
+// function changeText() {
+//     btnText = this.textContent || this.innerText;
+//     displayValue.innerText += btnText;
+//     valueOne = parseFloat(displayValue.innerText);
+//     valueTwo = parseFloat(displayValue.innerText);
+//     return valueOne, valueTwo;
+// }
 
 const add = (valueOne, valueTwo) => {
     operator = "+";
@@ -36,7 +47,7 @@ const divide = (valueOne, valueTwo) => {
     result = valueOne / valueTwo;
 }
 
-const operate = (operator) => {
+const operate = (operator, valueOne, valueTwo) => {
     if(operator === "+"){
         displayValue.innerText = result;
     }else if(operator === "-"){
