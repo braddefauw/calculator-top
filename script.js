@@ -1,5 +1,5 @@
-let valueOne = "first number";
-let valueTwo = 7;
+let valueOne = 1;
+let valueTwo = 2;
 let result = "";
 let displayValue = document.getElementById("output-h1");
 let operator = "";
@@ -17,7 +17,6 @@ for(const btn of opBtns){
     btn.addEventListener('click', function (){
         valueOne = displayValue.innerText;
         displayValue.innerText += this.value;
-        console.log(valueOne);
     })
 }
 
@@ -38,20 +37,18 @@ let equalBtn = document.querySelector(".equals")
 equalBtn.addEventListener('click', function () {
     if(displayValue.innerText.indexOf("+") !== -1){
         valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('+')+1);
-        console.log(valueTwo);
         result = parseFloat(valueOne) + parseFloat(valueTwo);
     }else if(displayValue.innerText.indexOf("-") !== -1){
         valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('-')+1);
-        console.log(valueTwo);
         result = parseFloat(valueOne) - parseFloat(valueTwo);
     }else if(displayValue.innerText.indexOf("*") !== -1){
-        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('x')+1);
-        console.log(valueTwo);
+        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('*')+1);
         result = parseFloat(valueOne) * parseFloat(valueTwo);
     }else if(displayValue.innerText.indexOf("/") !== -1){
         valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('/')+1);
-        console.log(valueTwo);
         result = parseFloat(valueOne) / parseFloat(valueTwo);
     }
     displayValue.innerText = result;
+    valueOne = result;
+    console.log(valueOne)
 })
