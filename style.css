@@ -173,7 +173,7 @@ input:checked + .slider:before {
     background-color:hsl(221, 14%, 31%)
 } 
 
-.calc-buttons .number {
+.calc-buttons .number, .operator {
     width: 20%;
     height: 15%;
     background-color: hsl(30, 25%, 89%);

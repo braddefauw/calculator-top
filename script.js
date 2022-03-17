@@ -9,9 +9,15 @@ let numBtns = document.querySelectorAll(".number");
 for(const btn of numBtns){
     btn.addEventListener('click', function (){
         displayValue.innerText += this.value;
+    })
+}
+
+let opBtns = document.querySelectorAll(".operator");
+for(const btn of opBtns){
+    btn.addEventListener('click', function (){
         valueOne = displayValue.innerText;
-        valueTwo = displayValue.innerText;
-        console.log(valueOne, valueTwo)
+        displayValue.innerText += this.value;
+        console.log(valueOne);
     })
 }
 
@@ -30,7 +36,18 @@ resetBtn.addEventListener('click', function () {
 
 let equalBtn = document.querySelector(".equals")
 equalBtn.addEventListener('click', function () {
-    console.log(this.value);
+    valueTwo = displayValue.innerText.slice(3, 5);
+    console.log(valueTwo);
+    if(displayValue.innerText.indexOf("+") !== -1){
+        result = parseFloat(valueOne) + parseFloat(valueTwo);
+    }else if(displayValue.innerText.indexOf("-") !== -1){
+        result = parseFloat(valueOne) - parseFloat(valueTwo);
+    }else if(displayValue.innerText.indexOf("x") !== -1){
+        result = parseFloat(valueOne) * parseFloat(valueTwo);
+    }else if(displayValue.innerText.indexOf("/") !== -1){
+        result = parseFloat(valueOne) / parseFloat(valueTwo);
+    }
+    displayValue.innerText = result;
 })
 
 // function changeText() {
@@ -41,38 +58,38 @@ equalBtn.addEventListener('click', function () {
 //     return valueOne, valueTwo;
 // }
 
-const add = (valueOne, valueTwo) => {
-    operator = "+";
-    displayValue.innerText += " " + operator + " " + valueTwo;
-    result = valueOne + valueTwo;
-}
+// const add = (valueOne, valueTwo) => {
+//     operator = "+";
+//     displayValue.innerText += " " + operator + " " + valueTwo;
+//     result = valueOne + valueTwo;
+// }
 
-const subtract = (valueOne, valueTwo) => {
-    operator = "-";
-    displayValue.innerText += " " + operator + " " + valueTwo;
-    result = valueOne - valueTwo;
-}
+// const subtract = (valueOne, valueTwo) => {
+//     operator = "-";
+//     displayValue.innerText += " " + operator + " " + valueTwo;
+//     result = valueOne - valueTwo;
+// }
 
-const multiply = (valueOne, valueTwo) => {
-    operator = "*";
-    displayValue.innerText += " " + operator + " " + valueTwo;
-    result = valueOne * valueTwo;
-}
+// const multiply = (valueOne, valueTwo) => {
+//     operator = "*";
+//     displayValue.innerText += " " + operator + " " + valueTwo;
+//     result = valueOne * valueTwo;
+// }
 
-const divide = (valueOne, valueTwo) => {
-    operator = "/";
-    displayValue.innerText += " " + operator + " " + valueTwo;
-    result = valueOne / valueTwo;
-}
+// const divide = (valueOne, valueTwo) => {
+//     operator = "/";
+//     displayValue.innerText += " " + operator + " " + valueTwo;
+//     result = valueOne / valueTwo;
+// }
 
-const operate = (operator, valueOne, valueTwo) => {
-    if(operator === "+"){
-        displayValue.innerText = result;
-    }else if(operator === "-"){
-        displayValue.innerText = result;
-    }else if(operator === "*"){
-        displayValue.innerText = result;
-    }else if(operator === "/"){
-        displayValue.innerText = result;
-    }
-}
+// const operate = (operator, valueOne, valueTwo) => {
+//     if(operator === "+"){
+//         displayValue.innerText = result;
+//     }else if(operator === "-"){
+//         displayValue.innerText = result;
+//     }else if(operator === "*"){
+//         displayValue.innerText = result;
+//     }else if(operator === "/"){
+//         displayValue.innerText = result;
+//     }
+// }
