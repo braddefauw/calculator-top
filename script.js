@@ -7,8 +7,8 @@ let operator = "";
 function changeText() {
     let btnText = this.textContent || this.innerText;
     displayValue.innerText += btnText;
-    valueOne = parseInt(displayValue.innerText);
-    valueTwo = parseInt(displayValue.innerText);
+    valueOne = parseFloat(displayValue.innerText);
+    valueTwo = parseFloat(displayValue.innerText);
     return valueOne, valueTwo;
 }
 
