@@ -8,7 +8,8 @@ function changeText() {
     let btnText = this.textContent || this.innerText;
     displayValue.innerText += btnText;
     valueOne = parseInt(displayValue.innerText);
-    return valueOne;
+    valueTwo = parseInt(displayValue.innerText);
+    return valueOne, valueTwo;
 }
 
 const add = (valueOne, valueTwo) => {
