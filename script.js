@@ -9,11 +9,29 @@ let numBtns = document.querySelectorAll(".number");
 for(const btn of numBtns){
     btn.addEventListener('click', function (){
         displayValue.innerText += this.value;
-        valueOne = parseFloat(displayValue.innerText);
-        valueTwo = parseFloat(displayValue.innerText);
+        valueOne = displayValue.innerText;
+        valueTwo = displayValue.innerText;
         console.log(valueOne, valueTwo)
     })
 }
+
+let delBtn = document.querySelector(".delete")
+delBtn.addEventListener('click', function () {
+    if(displayValue.innerText != result){
+        valueOne = parseInt(displayValue.innerText.slice(0, -1));
+        displayValue.innerText = valueOne;
+    } 
+})
+
+let resetBtn = document.querySelector(".reset")
+resetBtn.addEventListener('click', function () {
+    displayValue.innerText = "";
+})
+
+let equalBtn = document.querySelector(".equals")
+equalBtn.addEventListener('click', function () {
+    console.log(this.value);
+})
 
 // function changeText() {
 //     btnText = this.textContent || this.innerText;
@@ -57,16 +75,4 @@ const operate = (operator, valueOne, valueTwo) => {
     }else if(operator === "/"){
         displayValue.innerText = result;
     }
-}
-
-const deleteInt = () => {
-    if(displayValue.innerText != result){
-        valueOne = parseInt(displayValue.innerText.slice(0, -1));
-        console.log(valueOne);
-        displayValue.innerText = valueOne;
-    } 
-}
-
-const reset = () => {
-    displayValue.innerText = "";
 }
