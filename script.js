@@ -36,60 +36,22 @@ resetBtn.addEventListener('click', function () {
 
 let equalBtn = document.querySelector(".equals")
 equalBtn.addEventListener('click', function () {
-    valueTwo = displayValue.innerText.slice(3, 5);
-    console.log(valueTwo);
     if(displayValue.innerText.indexOf("+") !== -1){
+        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('+')+1);
+        console.log(valueTwo);
         result = parseFloat(valueOne) + parseFloat(valueTwo);
     }else if(displayValue.innerText.indexOf("-") !== -1){
+        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('-')+1);
+        console.log(valueTwo);
         result = parseFloat(valueOne) - parseFloat(valueTwo);
-    }else if(displayValue.innerText.indexOf("x") !== -1){
+    }else if(displayValue.innerText.indexOf("*") !== -1){
+        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('x')+1);
+        console.log(valueTwo);
         result = parseFloat(valueOne) * parseFloat(valueTwo);
     }else if(displayValue.innerText.indexOf("/") !== -1){
+        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('/')+1);
+        console.log(valueTwo);
         result = parseFloat(valueOne) / parseFloat(valueTwo);
     }
     displayValue.innerText = result;
 })
-
-// function changeText() {
-//     btnText = this.textContent || this.innerText;
-//     displayValue.innerText += btnText;
-//     valueOne = parseFloat(displayValue.innerText);
-//     valueTwo = parseFloat(displayValue.innerText);
-//     return valueOne, valueTwo;
-// }
-
-// const add = (valueOne, valueTwo) => {
-//     operator = "+";
-//     displayValue.innerText += " " + operator + " " + valueTwo;
-//     result = valueOne + valueTwo;
-// }
-
-// const subtract = (valueOne, valueTwo) => {
-//     operator = "-";
-//     displayValue.innerText += " " + operator + " " + valueTwo;
-//     result = valueOne - valueTwo;
-// }
-
-// const multiply = (valueOne, valueTwo) => {
-//     operator = "*";
-//     displayValue.innerText += " " + operator + " " + valueTwo;
-//     result = valueOne * valueTwo;
-// }
-
-// const divide = (valueOne, valueTwo) => {
-//     operator = "/";
-//     displayValue.innerText += " " + operator + " " + valueTwo;
-//     result = valueOne / valueTwo;
-// }
-
-// const operate = (operator, valueOne, valueTwo) => {
-//     if(operator === "+"){
-//         displayValue.innerText = result;
-//     }else if(operator === "-"){
-//         displayValue.innerText = result;
-//     }else if(operator === "*"){
-//         displayValue.innerText = result;
-//     }else if(operator === "/"){
-//         displayValue.innerText = result;
-//     }
-// }
