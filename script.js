@@ -19,7 +19,6 @@ for(const btn of opBtns){
             operate();
             displayValue.innerText += this.value; 
         }else{
-            console.log("test");
             valueOne = parseFloat(displayValue.innerText);
             displayValue.innerText += this.value; 
         }
@@ -60,5 +59,4 @@ function operate() {
     }
     displayValue.innerText = result;
     valueOne = result;
-    console.log(valueOne, valueTwo)
 }
