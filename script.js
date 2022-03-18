@@ -55,7 +55,11 @@ function operate() {
         result = valueOne * valueTwo.toFixed(2);
     }else if(displayValue.innerText.indexOf("/") !== -1){
         valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('/')+1));
-        result = (valueOne / valueTwo).toFixed(2);
+        if(valueTwo === 0){
+            result = "You can't divide by zero, fool!"
+        }else{
+            result = (valueOne / valueTwo).toFixed(2);  
+        }
     }
     displayValue.innerText = result;
     valueOne = result;
