@@ -1,5 +1,5 @@
 let valueOne = 1;
-let valueTwo = 2;
+let valueTwo = "test";
 let result = "";
 let displayValue = document.getElementById("output-h1");
 let operator = "";
@@ -30,6 +30,7 @@ for(const btn of opBtns){
             valueOne = parseFloat(displayValue.innerText);
             displayValue.innerText += this.value; 
         }
+        decimalCount = 0;
     })
 }
 
