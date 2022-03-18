@@ -15,7 +15,8 @@ for(const btn of numBtns){
 let opBtns = document.querySelectorAll(".operator");
 for(const btn of opBtns){
     btn.addEventListener('click', function (){
-        valueOne = displayValue.innerText;
+        console.log(valueOne, valueTwo)
+        valueOne = parseFloat(displayValue.innerText);
         displayValue.innerText += this.value;
     })
 }
@@ -23,7 +24,7 @@ for(const btn of opBtns){
 let delBtn = document.querySelector(".delete")
 delBtn.addEventListener('click', function () {
     if(displayValue.innerText != result){
-        valueOne = parseInt(displayValue.innerText.slice(0, -1));
+        valueOne = parseFloat(displayValue.innerText.slice(0, -1));
         displayValue.innerText = valueOne;
     } 
 })
@@ -31,24 +32,27 @@ delBtn.addEventListener('click', function () {
 let resetBtn = document.querySelector(".reset")
 resetBtn.addEventListener('click', function () {
     displayValue.innerText = "";
+    valueOne = "";
+    valueTwo = "";
 })
 
 let equalBtn = document.querySelector(".equals")
-equalBtn.addEventListener('click', function () {
+equalBtn.addEventListener('click', operate);
+
+function operate() {
     if(displayValue.innerText.indexOf("+") !== -1){
-        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('+')+1);
-        result = parseFloat(valueOne) + parseFloat(valueTwo);
+        valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('+')+1));
+        result = valueOne + valueTwo;
     }else if(displayValue.innerText.indexOf("-") !== -1){
         valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('-')+1);
-        result = parseFloat(valueOne) - parseFloat(valueTwo);
+        result = valueOne - valueTwo;
     }else if(displayValue.innerText.indexOf("*") !== -1){
         valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('*')+1);
-        result = parseFloat(valueOne) * parseFloat(valueTwo);
+        result = valueOne * valueTwo;
     }else if(displayValue.innerText.indexOf("/") !== -1){
         valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('/')+1);
-        result = parseFloat(valueOne) / parseFloat(valueTwo);
+        result = valueOne / valueTwo;
     }
     displayValue.innerText = result;
     valueOne = result;
-    console.log(valueOne)
-})
+}
