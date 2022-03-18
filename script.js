@@ -15,9 +15,14 @@ for(const btn of numBtns){
 let opBtns = document.querySelectorAll(".operator");
 for(const btn of opBtns){
     btn.addEventListener('click', function (){
-        console.log(valueOne, valueTwo)
-        valueOne = parseFloat(displayValue.innerText);
-        displayValue.innerText += this.value;
+        if(valueOne !== "" && displayValue.innerText.indexOf(valueOne) !== -1){
+            operate();
+            displayValue.innerText += this.value; 
+        }else{
+            console.log("test");
+            valueOne = parseFloat(displayValue.innerText);
+            displayValue.innerText += this.value; 
+        }
     })
 }
 
@@ -44,15 +49,16 @@ function operate() {
         valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('+')+1));
         result = valueOne + valueTwo;
     }else if(displayValue.innerText.indexOf("-") !== -1){
-        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('-')+1);
+        valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('-')+1));
         result = valueOne - valueTwo;
     }else if(displayValue.innerText.indexOf("*") !== -1){
-        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('*')+1);
+        valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('*')+1));
         result = valueOne * valueTwo;
     }else if(displayValue.innerText.indexOf("/") !== -1){
-        valueTwo = displayValue.innerText.substring(displayValue.innerText.indexOf('/')+1);
+        valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('/')+1));
         result = valueOne / valueTwo;
     }
     displayValue.innerText = result;
     valueOne = result;
+    console.log(valueOne, valueTwo)
 }
