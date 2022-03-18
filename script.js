@@ -46,19 +46,19 @@ equalBtn.addEventListener('click', operate);
 function operate() {
     if(displayValue.innerText.indexOf("+") !== -1){
         valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('+')+1));
-        result = valueOne + valueTwo.toFixed(8).replace(/[.,]00$/, "");
+        result = valueOne + valueTwo;
     }else if(displayValue.innerText.indexOf("-") !== -1){
         valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('-')+1));
-        result = valueOne - valueTwo.toFixed(8).replace(/[.,]00$/, "");
+        result = valueOne - valueTwo;
     }else if(displayValue.innerText.indexOf("*") !== -1){
         valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('*')+1));
-        result = valueOne * valueTwo.toFixed(8).replace(/[.,]00$/, "");
+        result = valueOne * valueTwo;
     }else if(displayValue.innerText.indexOf("/") !== -1){
         valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('/')+1));
         if(valueTwo === 0){
             result = "You can't divide by zero, fool!"
         }else{
-            result = (valueOne / valueTwo).toFixed(8).replace(/[.,]00$/, "");
+            result = Math.round((valueOne / valueTwo)*100)/100;
         }
     }
     displayValue.innerText = result;
