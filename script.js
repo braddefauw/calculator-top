@@ -4,10 +4,18 @@ let result = "";
 let displayValue = document.getElementById("output-h1");
 let operator = "";
 let btnText = "";
+let decimalCount = 0;
 
 let numBtns = document.querySelectorAll(".number");
 for(const btn of numBtns){
     btn.addEventListener('click', function (){
+        if(this.value === "."){
+            decimalCount++;
+            console.log(decimalCount);
+        }
+        if(this.value === "." && decimalCount > 1){
+            return;
+        }
         displayValue.innerText += this.value;
     })
 }
