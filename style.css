@@ -201,6 +201,8 @@ input:checked + .slider:before {
     color: white;
 }
 
+/* LIGHT MODE */
+
 .light-mode {
     background-color: hsl(0, 0%, 90%);
     color: hsl(60, 10%, 19%);
@@ -239,4 +241,16 @@ input:checked + .slider:before {
 
 .light-mode .number, .light-mode .operator {
     background-color: hsl(45, 7%, 89%);
+}
+
+/* MOBILE FRIENDLY DESIGN */
+@media (max-width: 768px) {
+	.calc-buttons input {
+        width: 20%;
+        margin: 4px;
+    }
+
+    .calc-buttons .delete, .calc-buttons .reset, .calc-buttons .equals {
+        font-size: 16px;
+    }
 }
