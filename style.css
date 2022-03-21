@@ -250,6 +250,10 @@ input:checked + .slider:before {
         margin: 4px;
     }
 
+    .calc-buttons .reset, .calc-buttons .equals {
+        width: 42.5%;
+    }
+
     .calc-buttons .delete, .calc-buttons .reset, .calc-buttons .equals {
         font-size: 16px;
     }
