@@ -12,10 +12,6 @@ body {
     font-weight: 700;
 }
 
-.light-mode {
-    background-color: white;
-}
-
 .calc-container {
     width: 400px;
     height: 500px;
@@ -203,4 +199,44 @@ input:checked + .slider:before {
     height: 15%;
     background-color: hsl(6, 63%, 50%);
     color: white;
+}
+
+.light-mode {
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(60, 10%, 19%);
+}
+
+.light-mode .top-row, .light-mode .output-row {
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(60, 10%, 19%);
+}
+
+.light-mode h1 {
+    color: hsl(60, 10%, 19%);
+}
+
+.light-mode .slider, .light-mode .calc-buttons {
+    background-color: hsl(0, 5%, 81%);
+    color: hsl(60, 10%, 19%);
+}
+
+.light-mode .output-number {
+    background-color: hsl(0, 0%, 93%);
+    color: hsl(60, 10%, 19%);
+}
+
+.light-mode .calc-buttons input{
+    border: none;
+}
+
+.light-mode .reset, .light-mode .delete{
+    background-color: hsl(185, 42%, 37%)
+}
+
+.light-mode .equals {
+    background-color: hsl(25, 98%, 40%);
+}
+
+.light-mode .number, .light-mode .operator {
+    background-color: hsl(45, 7%, 89%);
 }
