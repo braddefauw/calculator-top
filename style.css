@@ -12,6 +12,10 @@ body {
     font-weight: 700;
 }
 
+.light-mode {
+    background-color: white;
+}
+
 .calc-container {
     width: 400px;
     height: 500px;

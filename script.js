@@ -73,3 +73,9 @@ function operate() {
     displayValue.innerText = result;
     valueOne = result;
 }
+
+let toggle = document.querySelector(".slider")
+toggle.addEventListener('click', function (){
+    let element = document.body;
+    element.classList.toggle("light-mode");
+})
