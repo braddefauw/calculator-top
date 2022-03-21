@@ -73,6 +73,8 @@ function operate() {
     valueOne = result;
 }
 
+// TOGGLE BETWEEN DARK & LIGHT MODE
+
 let toggle = document.querySelector(".slider")
 toggle.addEventListener('click', function (){
     let element = document.body;
@@ -97,25 +99,8 @@ document.addEventListener('keypress', function(e){
         }
         decimalCount = 0;
     }else if(e.key === "Enter"){
-        if(displayValue.innerText.indexOf("+") !== -1){
-            valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('+')+1));
-            result = Math.round((valueOne + valueTwo)*100)/100;
-        }else if(displayValue.innerText.indexOf("-") !== -1){
-            valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('-')+1));
-            result = Math.round((valueOne - valueTwo)*100)/100;
-        }else if(displayValue.innerText.indexOf("*") !== -1){
-            valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('*')+1));
-            result = Math.round((valueOne * valueTwo)*100)/100;
-        }else if(displayValue.innerText.indexOf("/") !== -1){
-            valueTwo = parseFloat(displayValue.innerText.substring(displayValue.innerText.indexOf('/')+1));
-            if(valueTwo === 0){
-                result = "You can't divide by zero, fool!"
-            }else{
-                result = Math.round((valueOne / valueTwo)*100)/100;
-            }
-        }
-        displayValue.innerText = result;
-        valueOne = result;
+        e.preventDefault();
+        operate();
     }
     console.log(result, displayValue.innerText);
 })
