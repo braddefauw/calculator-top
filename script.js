@@ -22,16 +22,18 @@ for(const btn of numBtns){
 
 let opBtns = document.querySelectorAll(".operator");
 for(const btn of opBtns){
-    btn.addEventListener('click', function (){
-        if(valueOne !== "" && displayValue.innerText.indexOf(valueOne) !== -1){
-            operate();
-            displayValue.innerText += this.value; 
-        }else{
-            valueOne = parseFloat(displayValue.innerText);
-            displayValue.innerText += this.value; 
-        }
-        decimalCount = 0;
-    })
+    btn.addEventListener('click', operation)
+}
+
+function operation(){
+    if(valueOne !== "" && displayValue.innerText.indexOf(valueOne) !== -1){
+        operate();
+        displayValue.innerText += this.value; 
+    }else{
+        valueOne = parseFloat(displayValue.innerText);
+        displayValue.innerText += this.value; 
+    }
+    decimalCount = 0;
 }
 
 let delBtn = document.querySelector(".delete")
@@ -75,4 +77,23 @@ let toggle = document.querySelector(".slider")
 toggle.addEventListener('click', function (){
     let element = document.body;
     element.classList.toggle("light-mode");
+})
+
+let calcContainer = document.querySelector(".calc-container");
+document.addEventListener('keypress', function(e){
+    console.log(e.key);
+    if (e.key >= 0 && e.key <= 9){
+        displayValue.innerText += `${e.key}`;
+    }else if(e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/"){
+        if(valueOne !== "" && displayValue.innerText.indexOf(valueOne) !== -1){
+            operate();
+            displayValue.innerText += e.key; 
+        }else{
+            valueOne = parseFloat(displayValue.innerText);
+            displayValue.innerText += e.key; 
+        }
+        decimalCount = 0;
+    }else if(e.key === "Enter"){
+        operate();
+    }
 })
