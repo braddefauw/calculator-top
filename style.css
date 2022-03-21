@@ -244,6 +244,7 @@ input:checked + .slider:before {
 }
 
 /* MOBILE FRIENDLY DESIGN */
+
 @media (max-width: 768px) {
 	.calc-buttons input {
         width: 20%;

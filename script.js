@@ -36,10 +36,7 @@ for(const btn of opBtns){
 
 let delBtn = document.querySelector(".delete")
 delBtn.addEventListener('click', function () {
-    if(displayValue.innerText != result){
-        valueOne = parseFloat(displayValue.innerText.slice(0, -1));
-        displayValue.innerText = valueOne;
-    } 
+    displayValue.innerText = displayValue.innerText.slice(0, -1);
 })
 
 let resetBtn = document.querySelector(".reset")
