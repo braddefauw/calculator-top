@@ -238,10 +238,6 @@ input:checked + .slider:before {
 /* MOBILE FRIENDLY DESIGN */
 
 @media (max-width: 768px) {
-	body{
-        position: fixed;
-    }
-    
     .calc-buttons input {
         width: 20%;
         margin: 4px;
