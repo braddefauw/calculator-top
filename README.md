@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-! [BD Calculator App](https://awesomescreenshot.s3.amazonaws.com/image/2827546/24417713-742c799f9b583703cc15d198b4bf4f0f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20220322%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220322T190721Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=918226764fecb9b54411445662cbb6db475b05458a1c72d57b19efbd4c85ad51)
+![BD Calculator App](https://i.imgur.com/PtgZKf5.png)
 
 ### Links
 
