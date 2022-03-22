@@ -1,7 +1,7 @@
 # calculator-top
-# Frontend Mentor - Calculator app solution
+# The Odin Project/Front End Mentor - Calculator app solution
 
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Calculator app challenge on The Odin Project](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator) pulling in resources from [Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 
 ## Table of contents
 
@@ -17,8 +17,6 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -28,24 +26,15 @@ Users should be able to:
 - See the size of the elements adjust based on their device's screen size
 - Perform mathmatical operations like addition, subtraction, multiplication, and division
 - Adjust the color theme based on their preference
-- **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](https://www.awesomescreenshot.com/image/24417713?key=8ae432a47ab181c53f191ec4131ea9f6)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/braddefauw/calculator-top)
+- Live Site URL: [Add live site URL here](https://braddefauw.github.io/calculator-top/)
 
 ## My process
 
@@ -54,61 +43,126 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Vanilla JS
+- Desktop-first workflow
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+This was a great project that made it easy to use agile development to build out an increasing complex app. In particular, I really enjoyed integrating the light/dark mode feature and looping through all of my buttons with my event listeners to consolidate code. Additionally, it was interesting to learn about how input tags could be used in place of buttons, which once again helped to make my code a bit more simple. Incorporating keyboard functionality was a stretch goal that I was happy to learn about and accomplish as well.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="calc-buttons">
+  <input type="button" value="7" class="number">
+  <input type="button" value="8" class="number">
+  <input type="button" value="9" class="number">
+  <input type="button" value="DEL" class="delete">
+  <input type="button" value="4" class="number">
+  <input type="button" value="5" class="number">
+  <input type="button" value="6" class="number">
+  <input type="button" value="+" class="operator">
+  <input type="button" value="1" class="number">
+  <input type="button" value="2" class="number">
+  <input type="button" value="3" class="number">
+  <input type="button" value="-" class="operator">
+  <input type="button" value="." class="number">
+  <input type="button" value="0" class="number">
+  <input type="button" value="/" class="operator">
+  <input type="button" value="*" class="operator">
+  <input type="button" value="RESET" class="reset">
+  <input type="button" value="=" class="equals">
+</div>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(223, 31%, 20%);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: hsl(6, 63%, 50%);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(42px);
+    -ms-transform: translateX(42px);
+    transform: translateX(42px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 16px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+let calcContainer = document.querySelector(".calc-container");
+document.addEventListener('keypress', function(e){
+    console.log(e.key);
+    if (e.key >= 0 && e.key <= 9){
+        displayValue.innerText += `${e.key}`;
+    }else if(e.key === "."){
+        displayValue.innerText += `${e.key}`;
+        decimalCount++;
+    }else if(e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/"){
+        if(valueOne !== "" && displayValue.innerText.indexOf(valueOne) !== -1){
+            operate();
+            displayValue.innerText += `${e.key}`; 
+        }else{
+            valueOne = parseFloat(displayValue.innerText);
+            displayValue.innerText += `${e.key}`; 
+        }
+        decimalCount = 0;
+    }else if(e.key === "Enter"){
+        e.preventDefault();
+        operate();
+    }
+    console.log(result, displayValue.innerText);
+})
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+In the future, it would be great to allow users to pick between multiple themes instead of just light/dark, or even all them to select which mode they prefer when they first log in. I'm looking forward to learning more about CSS animations and developing my Javascript skills further.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- [W3 Schools - How TO - Toggle Dark Mode](https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp) - This is an amazing article which helped me finally understand toggling between light and dark mode. I'd recommend it to anyone still learning this concept.
+- [Stack Overflow](https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key) - Most frustrating bug dealt with trying to figure out why pressing equals was working on click but not on keydown. This stack overflow article pointed me to e.preventDefault() and was incredibly helpful.
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thank you to the wonderful communities at The Odin Project and Frontend Mentor for your insights and support as I developed this project. Additionally, I'd like to thank @dunnoconnor for his help in helping my navigate keydown bugs, in particular the "Enter" button.
