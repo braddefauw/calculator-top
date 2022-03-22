@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](https://www.awesomescreenshot.com/image/24417713?key=8ae432a47ab181c53f191ec4131ea9f6)
+- [BD Calculator app](https://www.awesomescreenshot.com/image/24417713?key=8ae432a47ab181c53f191ec4131ea9f6)
 
 ### Links
 
